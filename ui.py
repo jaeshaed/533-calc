@@ -1,0 +1,43 @@
+from tkinter import *                               
+from tkinter import ttk
+
+root = Tk()
+root.title("Калькулятор")
+root.geometry("280x400")
+
+btn1 = ttk.Button(text=" 1 ")
+btn2 = ttk.Button(text=" 2 ")
+btn3 = ttk.Button(text=" 3")
+btn4 = ttk.Button(text=" 4 ")
+btn5 = ttk.Button(text=" 5 ")
+btn6 = ttk.Button(text=" 6 ")
+btn7 = ttk.Button(text=" 7 ")
+btn8 = ttk.Button(text=" 8 ")
+btn9 = ttk.Button(text=" 9 ")
+btn0 = ttk.Button(text=" 0 ")
+btn_plus = ttk.Button(text=" + ")
+btn_minus = ttk.Button(text=" - ")
+btn_umnoj = ttk.Button(text=" * ")
+btn_delen = ttk.Button(text=" / ")
+btn_ravno = ttk.Button(text=" = ")
+btn_sbros = ttk.Button(text=" C ")
+
+btn9.place(x=140, y=80, width=70, height=80)
+btn8.place(x=70, y=80, width=70, height=80)
+btn7.place(x=0, y=80, width=70, height=80)
+btn6.place(x=140, y=160, width=70, height=80)
+btn5.place(x=70, y=160, width=70, height=80)
+btn4.place(x=0, y=160, width=70, height=80)
+btn3.place(x=140, y=240, width=70, height=80)
+btn2.place(x=70, y=240, width=70, height=80)
+btn1.place(x=0, y=240, width=70, height=80)
+
+btn_sbros.place(x=0, y=320, width=70, height=80)
+btn0.place(x=70, y=320, width=70, height=80)
+btn_ravno.place(x=140, y=320, width=70, height=80)
+
+btn_plus.place(x=210, y=320, width=70, height=80)
+btn_minus.place(x=210, y=240, width=70, height=80)
+btn_umnoj.place(x=210, y=160, width=70, height=80)
+btn_delen.place(x=210, y=80, width=70, height=80)
+root.mainloop()

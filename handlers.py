@@ -23,6 +23,9 @@ def handleDigit9():
 def handleDigit0():
     calcStack.append(0)
     
+def HandleDigits(digit):
+    calcStack.append(digit)
+    
 def handleOperatorPlus():
     calcStack.append('+')
 def handleOperatorMinus():
@@ -48,8 +51,8 @@ def calcExpression(expression):
         elif isinstance(item, str) and item in '+-*/':
             operators.append(item)
             
-    print(numbers)
-    print(operators)
+    # print(numbers)
+    # print(operators)
     
     result = numbers[0]
     for i, operator in enumerate(operators):
@@ -63,16 +66,8 @@ def calcExpression(expression):
         elif operator == '/':
             finalResult = cv.divide(result, nextNumber)
             
-    print(result)
-    print(nextNumber)
+    # print(result)
+    # print(nextNumber)
     
     return finalResult
         
-
-# handleDigit6()
-# handleOperatorPlus()
-# handleDigit4()
-
-# print(calcStack)
-result = calcExpression(calcStack)
-print(result)

@@ -5,7 +5,7 @@ root = Tk()
 root.title("Калькулятор")
 root.geometry("280x400")
 
-btn1 = ttk.Button(text=" 1 ")
+btn1 = ttk.Button(text=" 1 ", image=photo0, cursor="hand2", borderwidth=0)
 btn2 = ttk.Button(text=" 2 ")
 btn3 = ttk.Button(text=" 3")
 btn4 = ttk.Button(text=" 4 ")

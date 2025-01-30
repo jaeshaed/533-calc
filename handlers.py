@@ -23,6 +23,9 @@ def handleDigit9():
 def handleDigit0():
     calcStack.append(0)
     
+def handleErase():
+    calcStack.clear()
+
 def HandleDigits(digit):
     calcStack.append(digit)
     

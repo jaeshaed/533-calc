@@ -2,8 +2,35 @@ import cv
 
 calcStack = []
 
-def HandleDigits(digit):
-    calcStack.append(digit)
+def handleDigit1():
+    calcStack.append(1)
+    return makeToString
+def handleDigit2():
+    calcStack.append(2)
+    return makeToString
+def handleDigit3():
+    calcStack.append(3)
+    return makeToString
+def handleDigit4():
+    calcStack.append(4)
+    return makeToString
+def handleDigit5():
+    calcStack.append(5)
+    return makeToString
+def handleDigit6():
+    calcStack.append(6)
+    return makeToString
+def handleDigit7():
+    calcStack.append(7)
+    return makeToString
+def handleDigit8():
+    calcStack.append(8)
+    return makeToString
+def handleDigit9():
+    calcStack.append(9)
+    return makeToString
+def handleDigit0():
+    calcStack.append(0)
     return makeToString
     
 def handleOperatorPlus():

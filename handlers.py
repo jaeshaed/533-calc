@@ -10,7 +10,7 @@ def handleDigit1():
 def handleDigit2():
     calcStack.append(2)
     string = makeToString()
-    return stringedCalcStack
+    return string
 def handleDigit3():
     calcStack.append(3)
     string = makeToString()

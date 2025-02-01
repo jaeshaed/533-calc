@@ -1,44 +1,71 @@
 import cv 
 
 calcStack = []
+stringedCalcStack = ""
 
 def handleDigit1():
     calcStack.append(1)
+    string = makeToString()
+    return string
 def handleDigit2():
     calcStack.append(2)
+    string = makeToString()
+    return string
 def handleDigit3():
     calcStack.append(3)
+    string = makeToString()
+    return string
 def handleDigit4():
     calcStack.append(4)
+    string = makeToString()
+    return string
 def handleDigit5():
     calcStack.append(5)
+    string = makeToString()
+    return string
 def handleDigit6():
     calcStack.append(6)
+    string = makeToString()
+    return string
 def handleDigit7():
     calcStack.append(7)
+    string = makeToString()
+    return string
 def handleDigit8():
     calcStack.append(8)
+    string = makeToString()
+    return string
 def handleDigit9():
     calcStack.append(9)
+    string = makeToString()
+    return string
 def handleDigit0():
     calcStack.append(0)
-    
-def handleErase():
-    calcStack.clear()
-
-def HandleDigits(digit):
-    calcStack.append(digit)
+    string = makeToString()
+    return string
     
 def handleOperatorPlus():
     calcStack.append('+')
+    string = makeToString()
+    return string
 def handleOperatorMinus():
     calcStack.append('-')
+    string = makeToString()
+    return string
 def handleOperatorMult():
     calcStack.append('*')
+    string = makeToString()
+    return string
 def handleOperatorDivide():
     calcStack.append('/')
+    string = makeToString()
+    return string
 def handleOperatorEquals():
-    return calcStack
+    result = calcExpression(calcStack)
+    calcStack.clear()
+    calcStack.append(result)
+    string = makeToString()
+    return string
 
 def calcExpression(expression):
     if not isinstance(expression, list):
@@ -53,10 +80,7 @@ def calcExpression(expression):
             numbers.append(item)
         elif isinstance(item, str) and item in '+-*/':
             operators.append(item)
-            
-    # print(numbers)
-    # print(operators)
-    
+          
     result = numbers[0]
     for i, operator in enumerate(operators):
         nextNumber = numbers[i+1]
@@ -68,9 +92,18 @@ def calcExpression(expression):
             finalResult = cv.multiply(result, nextNumber)
         elif operator == '/':
             finalResult = cv.divide(result, nextNumber)
-            
-    # print(result)
-    # print(nextNumber)
-    
+         
     return finalResult
         
+        
+def makeToString():
+    stringedCalcStack = "".join(map(str, calcStack))
+    return stringedCalcStack
+
+
+# handleDigit6()
+# handleDigit6()
+# handleOperatorMult()
+# handleDigit6()
+# handleDigit6()
+# print(handleOperatorEquals())

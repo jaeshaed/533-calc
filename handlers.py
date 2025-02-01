@@ -9,8 +9,8 @@ def handleDigit1():
     return string
 def handleDigit2():
     calcStack.append(2)
-    
-    return stringedCalcStack
+    string = makeToString()
+    return string
 def handleDigit3():
     calcStack.append(3)
     string = makeToString()
@@ -101,10 +101,8 @@ def makeToString():
     return stringedCalcStack
 
 
-handleDigit6()
-
-handleDigit6()
-
-handleOperatorMult()
-handleDigit6()
-print(handleDigit3())
+# handleDigit6()
+# handleDigit6()
+# handleOperatorMult()
+# handleDigit6()
+# print(handleDigit3())

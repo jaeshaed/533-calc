@@ -47,7 +47,9 @@ def handleOperatorDivide():
     return makeToString
 def handleOperatorEquals():
     result = calcExpression(calcStack)
-    return result
+    calcStack.clear
+    calcStack.append(result)
+    return makeToString
 
 def calcExpression(expression):
     if not isinstance(expression, list):
@@ -80,3 +82,4 @@ def calcExpression(expression):
         
 def makeToString():
     joined = "".join(map(str, calcStack))
+

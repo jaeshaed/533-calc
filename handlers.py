@@ -62,7 +62,7 @@ def handleOperatorDivide():
     return string
 def handleOperatorEquals():
     result = calcExpression(calcStack)
-    calcStack.clear
+    calcStack.clear()
     calcStack.append(result)
     string = makeToString()
     return string
@@ -105,4 +105,5 @@ def makeToString():
 # handleDigit6()
 # handleOperatorMult()
 # handleDigit6()
-# print(handleDigit3())
+# handleDigit6()
+# print(handleOperatorEquals())

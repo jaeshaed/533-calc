@@ -8,12 +8,16 @@ def HandleDigits(digit):
     
 def handleOperatorPlus():
     calcStack.append('+')
+    return makeToString
 def handleOperatorMinus():
     calcStack.append('-')
+    return makeToString
 def handleOperatorMult():
     calcStack.append('*')
+    return makeToString
 def handleOperatorDivide():
     calcStack.append('/')
+    return makeToString
 def handleOperatorEquals():
     result = calcExpression(calcStack)
     return result

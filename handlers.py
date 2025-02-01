@@ -44,6 +44,11 @@ def handleDigit0():
     string = makeToString()
     return string
     
+def handleErase():
+    calcStack.clear()
+    string = makeToString()
+    return string
+    
 def handleOperatorPlus():
     calcStack.append('+')
     string = makeToString()

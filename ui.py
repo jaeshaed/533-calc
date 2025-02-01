@@ -99,7 +99,7 @@ btn_delen = Button(root, image=photo_delen ,text=" / ", cursor="hand2", borderwi
 btn_ravno = Button(root, image=photo_ravno ,text=" = ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerRavno)
 btn_sbros = Button(root, image=photo_sbros ,text=" C ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerClear)
 
-label.place(x=20, y=0, width=100, height=100)
+label.place(x=20, y=0, width=300, height=100)
 
 btn9.place(x=200, y=80, width=100, height=80)
 btn8.place(x=100, y=80, width=100, height=80)

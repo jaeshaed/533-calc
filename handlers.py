@@ -3,44 +3,49 @@ import cv
 calcStack = []
 stringedCalcStack = ""
 
+def _handleDigit(digit):
+    if calcStack and calcStack[-1].isdigit():
+        calcStack[-1] += digit
+    else:
+        calcStack.append(digit)
 def handleDigit1():
-    calcStack.append(1)
+    _handleDigit('1')
     string = makeToString()
     return string
 def handleDigit2():
-    calcStack.append(2)
+    _handleDigit('2')
     string = makeToString()
     return string
 def handleDigit3():
-    calcStack.append(3)
+    _handleDigit('3')
     string = makeToString()
     return string
 def handleDigit4():
-    calcStack.append(4)
+    _handleDigit('4')
     string = makeToString()
     return string
 def handleDigit5():
-    calcStack.append(5)
+    _handleDigit('5')
     string = makeToString()
     return string
 def handleDigit6():
-    calcStack.append(6)
+    _handleDigit('6')
     string = makeToString()
     return string
 def handleDigit7():
-    calcStack.append(7)
+    _handleDigit('7')
     string = makeToString()
     return string
 def handleDigit8():
-    calcStack.append(8)
+    _handleDigit('8')
     string = makeToString()
     return string
 def handleDigit9():
-    calcStack.append(9)
+    _handleDigit('9')
     string = makeToString()
     return string
 def handleDigit0():
-    calcStack.append(0)
+    _handleDigit('0')
     string = makeToString()
     return string
     
@@ -66,39 +71,53 @@ def handleOperatorDivide():
     string = makeToString()
     return string
 def handleOperatorEquals():
-    result = calcExpression(calcStack)
-    calcStack.clear()
-    calcStack.append(result)
+    if not calcStack:
+        return ''
+    while len(calcStack) > 1:
+        try:
+            calcExpression(calcStack)
+        except ValueError as err:
+            calcStack.clear()
+            return f'ОШИБКА: {err}'
     string = makeToString()
     return string
 
 def calcExpression(expression):
     if not isinstance(expression, list):
         raise ValueError("must be a list")
-    
-    numbers = []
-    operators = []
-    
-    # separate numbers and operators
-    for item in expression:
-        if isinstance(item, (int, float)):
-            numbers.append(item)
-        elif isinstance(item, str) and item in '+-*/':
-            operators.append(item)
-          
-    result = numbers[0]
-    for i, operator in enumerate(operators):
-        nextNumber = numbers[i+1]
-        if operator == '+':
-            finalResult = cv.add(result, nextNumber)
-        elif operator == '-':
-            finalResult = cv.subtract(result, nextNumber)
-        elif operator == '*':
-            finalResult = cv.multiply(result, nextNumber)
-        elif operator == '/':
-            finalResult = cv.divide(result, nextNumber)
-         
-    return finalResult
+    if not expression:
+        raise ValueError('empty list')
+
+    # Allow the expression to start with a negative number.
+    if expression[0] == '-':
+        expression.insert(0, '0')
+
+    try:
+        a = float(expression.pop(0))
+        operator = expression.pop(0)
+        b = float(expression.pop(0))
+    except (IndexError, ValueError):
+        raise ValueError('некорректное выражение')
+
+    if operator == '+':
+        finalResult = cv.add(a, b)
+    elif operator == '-':
+        finalResult = cv.subtract(a, b)
+    elif operator == '*':
+        finalResult = cv.multiply(a, b)
+    elif operator == '/':
+        finalResult = cv.divide(a, b)
+        # cv.divide() may return an error as a string
+        if not isinstance(finalResult, float):
+            raise ValueError(finalResult)
+    else:
+        raise ValueError(f"unsupported operator: {operator}")
+
+    # drop the fractional part if it was zero (1.0 -> 1)
+    if finalResult.is_integer():
+        finalResult = int(finalResult)
+
+    expression.insert(0, str(finalResult))
         
         
 def makeToString():

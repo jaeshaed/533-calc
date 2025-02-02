@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import ttk
 
 import os
-print(os.getcwd())
+
 root = Tk()
 root.title("Калькулятор")
 root.geometry("400x440+600+200")
@@ -13,22 +13,22 @@ def click(y):
     label["text"] = y
     print(y)
 
-photo0 = PhotoImage(file=r"grafika/0.png")
-photo1 = PhotoImage(file=r"grafika/1.png")
-photo2 = PhotoImage(file=r"grafika/2.png")
-photo3 = PhotoImage(file=r"grafika/3.png")
-photo4 = PhotoImage(file=r"grafika/4.png")
-photo5 = PhotoImage(file=r"grafika/5.png")
-photo6 = PhotoImage(file=r"grafika/6.png")
-photo7 = PhotoImage(file=r"grafika/7.png")
-photo8 = PhotoImage(file=r"grafika/8.png")
-photo9 = PhotoImage(file=r"grafika/9.png")
-photo_plus = PhotoImage(file=r"grafika/plus.png")
-photo_minus = PhotoImage(file=r"grafika/minus.png")
-photo_umnoj = PhotoImage(file=r"grafika/mult.png")
-photo_delen = PhotoImage(file=r"grafika/division.png")
-photo_ravno = PhotoImage(file=r"grafika/equally.png")
-photo_sbros = PhotoImage(file=r"grafika/clear.png")
+photo0 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/0.png"))
+photo1 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/1.png"))
+photo2 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/2.png"))
+photo3 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/3.png"))
+photo4 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/4.png"))
+photo5 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/5.png"))
+photo6 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/6.png"))
+photo7 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/7.png"))
+photo8 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/8.png"))
+photo9 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/9.png"))
+photo_plus = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/plus.png"))
+photo_minus = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/minus.png"))
+photo_umnoj = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/mult.png"))
+photo_delen = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/division.png"))
+photo_ravno = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/equally.png"))
+photo_sbros = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/clear.png"))
 
 
 label = ttk.Label(background="#FFFFFF", text="", font="20")

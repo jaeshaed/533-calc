@@ -1,17 +1,52 @@
 import handlers
 from tkinter import *                               
 from tkinter import ttk
+import tkinter as tk 
 
 import os
 
-root = Tk()
+root = tk.Tk()
 root.title("Калькулятор")
 root.geometry("400x440+600+200")
 root.config(bg="#FFFFFF")
 
-def click(y):
-    label["text"] = y
-    print(y)
+def key_pressed(event): 
+    if event.keysym == "0": 
+        Handler0()
+    if event.keysym == "1":
+        Handler1()
+    if event.keysym == "2":
+        Handler2() 
+    if event.keysym == "3":
+        Handler3()
+    if event.keysym == "4":
+        Handler4()
+    if event.keysym == "5":
+        Handler5()
+    if event.keysym == "6":
+        Handler6()
+    if event.keysym == "7":
+        Handler7()
+    if event.keysym == "8": 
+        Handler8()
+    if event.keysym == "9":
+        Handler9()
+    if event.keysym == "minus":
+        HandlerMinus()
+    if event.keysym == "plus":
+        HandlerPlus()
+    if event.keysym == "asterisk":     
+        HandlerUmnoj()
+    if event.keysym == "slash":
+        HandlerDelen()
+    if event.keysym == "Enter" or "=":
+        HandlerRavno()
+    if event.keysym == "BackSpace":   
+        HandlerClear()
+    if event.keysym == "Escape":
+        root.destroy()
+
+root.bind("<KeyPress>", key_pressed) 
 
 photo0 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/0.png"))
 photo1 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/1.png"))
@@ -120,4 +155,5 @@ btn_minus.place(x=300, y=260, width=100, height=80)
 btn_umnoj.place(x=300, y=170, width=100, height=80)
 btn_delen.place(x=300, y=80, width=100, height=80)
 
+root.focus_set() 
 root.mainloop()

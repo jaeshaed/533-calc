@@ -1,0 +1,11 @@
+Manual on how to bundle the calculator into a single executable file.
+
+1. install requirements (pip install requirements)
+2. execute compile.bat
+3. goto dist/ and check
+
+Инструкция по упаковке калькулятора в единый исполняемый файл.
+
+1. установить требования (pip install requirements)
+2. открыть compile.bat
+3. проверить в директории dist/

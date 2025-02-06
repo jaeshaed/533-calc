@@ -140,5 +140,88 @@ class TestMethods(unittest.TestCase):
 
         self.assertEqual(result, supposedResult)
 
+    def test_calccomma_addition(self):
+        # 5.5 + 5.5 = 11
+        supposedResult = '11'
+        handlers.handleDigit5()
+        handlers.handleComma()
+        handlers.handleDigit5()
+        handlers.handleOperatorPlus()
+        handlers.handleDigit5()
+        handlers.handleComma()
+        handlers.handleDigit5()
+        result = handlers.handleOperatorEquals()
+        
+        self.assertEqual(result, supposedResult)
+
+    def test_calccomma_minus(self):
+        # 5.5 - 5.5 = 0
+        supposedResult = '0'
+        handlers.handleDigit5()
+        handlers.handleComma()
+        handlers.handleDigit5()
+        handlers.handleOperatorMinus()
+        handlers.handleDigit5()
+        handlers.handleComma()
+        handlers.handleDigit5()
+        result = handlers.handleOperatorEquals()
+
+        self.assertEqual(result, supposedResult)
+
+    def test_calccomma_multiply(self):
+        # 5.5 * 5.5 = 30.25
+        supposedResult = '30.25'
+        handlers.handleDigit5()
+        handlers.handleComma()
+        handlers.handleDigit5()
+        handlers.handleOperatorMult()
+        handlers.handleDigit5()
+        handlers.handleComma()
+        handlers.handleDigit5()
+        result = handlers.handleOperatorEquals()
+
+        self.assertEqual(result, supposedResult)
+
+    def test_calccomma_dicide(self):
+        #5.5 / 5.5 = 1
+        supposedResult = '1'
+        handlers.handleDigit5()
+        handlers.handleComma()
+        handlers.handleDigit5()
+        handlers.handleOperatorDivide()
+        handlers.handleDigit5()
+        handlers.handleComma()
+        handlers.handleDigit5()
+        result = handlers.handleOperatorEquals()
+
+        self.assertEqual(result, supposedResult)
+
+    def test_malformed_input3(self):
+        # 5..3 + ..2 = ?
+        supposedResult = 'ОШИБКА: некорректное выражение'
+        handlers.handleDigit5()
+        handlers.handleComma()
+        handlers.handleComma()
+        handlers.handleOperatorPlus()
+        handlers.handleComma()
+        handlers.handleComma()
+        result = handlers.handleOperatorEquals()
+
+        self.assertEqual(result, supposedResult)
+
+    def test_malformed_input4(self):
+        # .08 + 32. = ?
+        supposedResult = 'ОШИБКА: некорректное выражение'
+        handlers.handleComma()
+        handlers.handleDigit0()
+        handlers.handleDigit8()
+        handlers.handleOperatorPlus()
+        handlers.handleDigit3()
+        handlers.handleDigit2()
+        handlers.handleComma()
+        result = handlers.handleOperatorEquals()
+
+        self.assertEqual(result, supposedResult)
+
 if __name__ == "__main__":
     unittest.main()

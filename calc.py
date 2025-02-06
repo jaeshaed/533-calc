@@ -11,7 +11,6 @@ root.geometry("400x530+600+200")
 root.config(bg="#FFFFFF")
 
 def key_pressed(event): 
-    print(event.keysym)
     if event.keysym == "0":
         Handler0()
     if event.keysym == "1":
@@ -117,7 +116,7 @@ def HandlerDelen():
     label.config(text=handlers.handleOperatorDivide())
     
 def HandlerComma():
-    label.config(text=handlers.handleOperatorComma())
+    label.config(text=handlers.handleComma())
 
 def HandlerClear():
     label.config(text=handlers.handleErase())

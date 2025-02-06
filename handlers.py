@@ -70,7 +70,7 @@ def handleOperatorDivide():
     calcStack.append('/')
     string = makeToString()
     return string
-def handleOperatorComma():
+def handleComma():
     calcStack.append(',')
     string = makeToString()
     return string

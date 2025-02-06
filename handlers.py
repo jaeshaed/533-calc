@@ -4,7 +4,7 @@ calcStack = []
 stringedCalcStack = ""
 
 def _handleDigit(digit):
-    if calcStack and calcStack[-1].isdigit():
+    if calcStack and calcStack[-1].replace(".", "", 1).isdigit():
         calcStack[-1] += digit
     else:
         calcStack.append(digit)
@@ -71,7 +71,7 @@ def handleOperatorDivide():
     string = makeToString()
     return string
 def handleComma():
-    calcStack.append(',')
+    _handleDigit('.')
     string = makeToString()
     return string
 def handleOperatorEquals():

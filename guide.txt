@@ -1,0 +1,7 @@
+1. install requirements (pip install requirements)
+2. execute compile.bat
+3. goto dist/ and check
+
+1. установить требования (pip install requirements)
+2. открыть compile.bat
+3. проверить в директории dist/

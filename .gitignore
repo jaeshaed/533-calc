@@ -1,0 +1,4 @@
+calc.spec
+__pycache__/*
+build/*
+dist/*

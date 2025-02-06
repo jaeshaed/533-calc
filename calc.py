@@ -72,55 +72,55 @@ photo_clear = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/c
 label = ttk.Label(background="#FFFFFF", text="", font="20")
 
 def Handler1():
-    label.config(text=handlers.handleDigit1())
+    label.config(text=handlers.handleDigit1().replace(".", ","))
 
 def Handler2():
-    label.config(text=handlers.handleDigit2())
+    label.config(text=handlers.handleDigit2().replace(".", ","))
 
 def Handler3():
-    label.config(text=handlers.handleDigit3())
+    label.config(text=handlers.handleDigit3().replace(".", ","))
 
 def Handler4():
-    label.config(text=handlers.handleDigit4())
+    label.config(text=handlers.handleDigit4().replace(".", ","))
 
 def Handler5():
-    label.config(text=handlers.handleDigit5())
+    label.config(text=handlers.handleDigit5().replace(".", ","))
 
 def Handler6():
-    label.config(text=handlers.handleDigit6())
+    label.config(text=handlers.handleDigit6().replace(".", ","))
 
 def Handler7():
-    label.config(text=handlers.handleDigit7())
+    label.config(text=handlers.handleDigit7().replace(".", ","))
 
 def Handler8():
-    label.config(text=handlers.handleDigit8())
+    label.config(text=handlers.handleDigit8().replace(".", ","))
 
 def Handler9():
-    label.config(text=handlers.handleDigit9())
+    label.config(text=handlers.handleDigit9().replace(".", ","))
 
 def Handler0():
-    label.config(text=handlers.handleDigit0())
+    label.config(text=handlers.handleDigit0().replace(".", ","))
 
 def HandlerPlus():
-    label.config(text=handlers.handleOperatorPlus())
+    label.config(text=handlers.handleOperatorPlus().replace(".", ","))
 
 def HandlerMinus():
-    label.config(text=handlers.handleOperatorMinus())
+    label.config(text=handlers.handleOperatorMinus().replace(".", ","))
 
 def HandlerUmnoj():
-    label.config(text=handlers.handleOperatorMult())
+    label.config(text=handlers.handleOperatorMult().replace(".", ","))
 
 def HandlerRavno():
-    label.config(text=handlers.handleOperatorEquals())
+    label.config(text=handlers.handleOperatorEquals().replace(".", ","))
 
 def HandlerDelen():
-    label.config(text=handlers.handleOperatorDivide())
+    label.config(text=handlers.handleOperatorDivide().replace(".", ","))
     
 def HandlerComma():
-    label.config(text=handlers.handleComma())
+    label.config(text=handlers.handleComma().replace(".", ","))
 
 def HandlerClear():
-    label.config(text=handlers.handleErase())
+    label.config(text=handlers.handleErase().replace(".", ","))
 
 
 btn1 = Button(root, image=photo1 ,text=" 1 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=Handler1)

@@ -1,7 +1,7 @@
 import handlers
-from tkinter import *                               
+from tkinter import *
 from tkinter import ttk
-import tkinter as tk 
+import tkinter as tk
 
 import os
 
@@ -10,14 +10,13 @@ root.title("Калькулятор")
 root.geometry("400x530+600+200")
 root.config(bg="#FFFFFF")
 
-def key_pressed(event): 
-    print(event.keysym)
+def key_pressed(event):
     if event.keysym == "0":
         Handler0()
     if event.keysym == "1":
         Handler1()
     if event.keysym == "2":
-        Handler2() 
+        Handler2()
     if event.keysym == "3":
         Handler3()
     if event.keysym == "4":
@@ -49,7 +48,7 @@ def key_pressed(event):
     if event.keysym == "BackSpace":
         HandlerClear()
 
-root.bind("<KeyPress>", key_pressed) 
+root.bind("<KeyPress>", key_pressed)
 
 photo0 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/0.png"))
 photo1 = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/1.png"))
@@ -115,7 +114,7 @@ def HandlerRavno():
 
 def HandlerDelen():
     label.config(text=handlers.handleOperatorDivide().replace(".", ","))
-    
+
 def HandlerComma():
     label.config(text=handlers.handleComma().replace(".", ","))
 
@@ -164,5 +163,5 @@ btn_minus.place(x=300, y=260, width=100, height=80)
 btn_umnoj.place(x=300, y=170, width=100, height=80)
 btn_delen.place(x=300, y=80, width=100, height=80)
 
-root.focus_set() 
+root.focus_set()
 root.mainloop()

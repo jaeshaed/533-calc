@@ -35,11 +35,11 @@ def key_pressed(event):
         HandlerMinus()
     if event.keysym == "plus":
         HandlerPlus()
-    if event.keysym == "asterisk":     
+    if event.keysym == "asterisk":
         HandlerUmnoj()
     if event.keysym == "slash":
         HandlerDelen()
-    if event.keysym == "Enter" or "=":
+    if event.keysym == "Return" or event.keysym == "equal":
         HandlerRavno()
     if event.keysym == "BackSpace":   
         HandlerClear()

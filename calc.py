@@ -11,6 +11,7 @@ root.geometry("400x530+600+200")
 root.config(bg="#FFFFFF")
 
 def key_pressed(event): 
+    print(event.keysym)
     if event.keysym == "0":
         Handler0()
     if event.keysym == "1":
@@ -41,7 +42,7 @@ def key_pressed(event):
         HandlerDelen()
     if event.keysym == "Return" or event.keysym == "equal":
         HandlerRavno()
-    if event.keysym == "comma":
+    if event.keysym == "comma" or event.keysym == "period":
         HandlerComma()
     if event.keysym == "Escape":
         root.destroy()

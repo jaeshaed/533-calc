@@ -70,6 +70,10 @@ def handleOperatorDivide():
     calcStack.append('/')
     string = makeToString()
     return string
+def handleOperatorComma():
+    calcStack.append(',')
+    string = makeToString()
+    return string
 def handleOperatorEquals():
     if not calcStack:
         return ''

@@ -7,11 +7,12 @@ import os
 
 root = tk.Tk()
 root.title("Калькулятор")
-root.geometry("400x440+600+200")
+root.geometry("400x530+600+200")
 root.config(bg="#FFFFFF")
 
 def key_pressed(event): 
-    if event.keysym == "0": 
+    print(event.keysym)
+    if event.keysym == "0":
         Handler0()
     if event.keysym == "1":
         Handler1()
@@ -27,7 +28,7 @@ def key_pressed(event):
         Handler6()
     if event.keysym == "7":
         Handler7()
-    if event.keysym == "8": 
+    if event.keysym == "8":
         Handler8()
     if event.keysym == "9":
         Handler9()
@@ -41,10 +42,12 @@ def key_pressed(event):
         HandlerDelen()
     if event.keysym == "Return" or event.keysym == "equal":
         HandlerRavno()
-    if event.keysym == "BackSpace":   
-        HandlerClear()
+    if event.keysym == "comma":
+        HandlerComma()
     if event.keysym == "Escape":
         root.destroy()
+    if event.keysym == "BackSpace":
+        HandlerClear()
 
 root.bind("<KeyPress>", key_pressed) 
 
@@ -63,8 +66,8 @@ photo_minus = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/m
 photo_umnoj = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/mult.png"))
 photo_delen = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/division.png"))
 photo_ravno = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/equally.png"))
-photo_sbros = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/clear.png"))
-
+photo_comma = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/comma.png"))
+photo_clear = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/clear.png"))
 
 label = ttk.Label(background="#FFFFFF", text="", font="20")
 
@@ -113,6 +116,9 @@ def HandlerRavno():
 def HandlerDelen():
     label.config(text=handlers.handleOperatorDivide())
     
+def HandlerComma():
+    label.config(text=handlers.handleOperatorComma())
+
 def HandlerClear():
     label.config(text=handlers.handleErase())
 
@@ -132,7 +138,8 @@ btn_minus = Button(root, image=photo_minus ,text=" - ", cursor="hand2", borderwi
 btn_umnoj = Button(root, image=photo_umnoj ,text=" * ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerUmnoj)
 btn_delen = Button(root, image=photo_delen ,text=" / ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerDelen)
 btn_ravno = Button(root, image=photo_ravno ,text=" = ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerRavno)
-btn_sbros = Button(root, image=photo_sbros ,text=" C ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerClear)
+btn_comma = Button(root, image=photo_comma ,text=" , ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerComma)
+btn_clear = Button(root, image=photo_clear ,text=" C ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerClear)
 
 label.place(x=20, y=0, width=300, height=100)
 
@@ -146,9 +153,11 @@ btn3.place(x=200, y=260, width=100, height=80)
 btn2.place(x=100, y=260, width=100, height=80)
 btn1.place(x=0, y=260, width=100, height=80)
 
-btn_sbros.place(x=0, y=350, width=100, height=80)
+btn_comma.place(x=0, y=350, width=100, height=80)
 btn0.place(x=100, y=350, width=100, height=80)
 btn_ravno.place(x=200, y=350, width=100, height=80)
+
+btn_clear.place(x=100, y=440, width=200, height=80)
 
 btn_plus.place(x=300, y=350, width=100, height=80)
 btn_minus.place(x=300, y=260, width=100, height=80)

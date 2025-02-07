@@ -1,1 +1,1 @@
-pyinstaller --onefile --add-data "grafika:grafika"  calc.py
+pyinstaller -w --onefile --add-data "grafika:grafika"  calc.py

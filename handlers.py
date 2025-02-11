@@ -3,90 +3,90 @@ import cv
 calcStack = []
 stringedCalcStack = ""
 
-def _handleDigit(digit):
+def _handle_digit(digit):
     if calcStack and calcStack[-1].replace(".", "", 1).isdigit():
         calcStack[-1] += digit
     else:
         calcStack.append(digit)
-def handleDigit1():
-    _handleDigit('1')
-    string = makeToString()
+def handle_digit1():
+    _handle_digit('1')
+    string = make_to_string()
     return string
-def handleDigit2():
-    _handleDigit('2')
-    string = makeToString()
+def handle_digit2():
+    _handle_digit('2')
+    string = make_to_string()
     return string
-def handleDigit3():
-    _handleDigit('3')
-    string = makeToString()
+def handle_digit3():
+    _handle_digit('3')
+    string = make_to_string()
     return string
-def handleDigit4():
-    _handleDigit('4')
-    string = makeToString()
+def handle_digit4():
+    _handle_digit('4')
+    string = make_to_string()
     return string
-def handleDigit5():
-    _handleDigit('5')
-    string = makeToString()
+def handle_digit5():
+    _handle_digit('5')
+    string = make_to_string()
     return string
-def handleDigit6():
-    _handleDigit('6')
-    string = makeToString()
+def handle_digit6():
+    _handle_digit('6')
+    string = make_to_string()
     return string
-def handleDigit7():
-    _handleDigit('7')
-    string = makeToString()
+def handle_digit7():
+    _handle_digit('7')
+    string = make_to_string()
     return string
-def handleDigit8():
-    _handleDigit('8')
-    string = makeToString()
+def handle_digit8():
+    _handle_digit('8')
+    string = make_to_string()
     return string
-def handleDigit9():
-    _handleDigit('9')
-    string = makeToString()
+def handle_digit9():
+    _handle_digit('9')
+    string = make_to_string()
     return string
-def handleDigit0():
-    _handleDigit('0')
-    string = makeToString()
+def handle_digit0():
+    _handle_digit('0')
+    string = make_to_string()
     return string
     
-def handleErase():
+def handle_erase():
     calcStack.clear()
-    string = makeToString()
+    string = make_to_string()
     return string
     
-def handleOperatorPlus():
+def handle_operator_plus():
     calcStack.append('+')
-    string = makeToString()
+    string = make_to_string()
     return string
-def handleOperatorMinus():
+def handle_operator_minus():
     calcStack.append('-')
-    string = makeToString()
+    string = make_to_string()
     return string
-def handleOperatorMult():
+def handle_operator_mult():
     calcStack.append('*')
-    string = makeToString()
+    string = make_to_string()
     return string
-def handleOperatorDivide():
+def handle_operator_divide():
     calcStack.append('/')
-    string = makeToString()
+    string = make_to_string()
     return string
-def handleComma():
-    _handleDigit('.')
-    string = makeToString()
+def handle_comma():
+    _handle_digit('.')
+    string = make_to_string()
     return string
-def handleOperatorEquals():
+def handle_operator_equals():
     if not calcStack:
         return ''
     while len(calcStack) > 1:
         try:
-            calcExpression(calcStack)
+            calc_expression(calcStack)
         except ValueError as err:
             calcStack.clear()
             return f'ОШИБКА: {err}'
-    string = makeToString()
+    string = make_to_string()
     return string
 
-def calcExpression(expression):
+def calc_expression(expression):
     if not isinstance(expression, list):
         raise ValueError("must be a list")
     if not expression:
@@ -104,29 +104,29 @@ def calcExpression(expression):
         raise ValueError('некорректное выражение')
 
     if operator == '+':
-        finalResult = cv.add(a, b)
+        final_result = cv.add(a, b)
     elif operator == '-':
-        finalResult = cv.subtract(a, b)
+        final_result = cv.subtract(a, b)
     elif operator == '*':
-        finalResult = cv.multiply(a, b)
+        final_result = cv.multiply(a, b)
     elif operator == '/':
-        finalResult = cv.divide(a, b)
+        final_result = cv.divide(a, b)
         # cv.divide() may return an error as a string
-        if not isinstance(finalResult, float):
-            raise ValueError(finalResult)
+        if not isinstance(final_result, float):
+            raise ValueError(final_result)
     else:
         raise ValueError(f"unsupported operator: {operator}")
 
     # drop the fractional part if it was zero (1.0 -> 1)
-    if finalResult.is_integer():
-        finalResult = int(finalResult)
+    if final_result.is_integer():
+        final_result = int(final_result)
 
-    expression.insert(0, str(finalResult))
+    expression.insert(0, str(final_result))
         
         
-def makeToString():
-    stringedCalcStack = "".join(map(str, calcStack))
-    return stringedCalcStack
+def make_to_string():
+    stringed_calc_stack = "".join(map(str, calcStack))
+    return stringed_calc_stack
 
 
 # handleDigit6()

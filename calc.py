@@ -12,41 +12,41 @@ root.config(bg="#FFFFFF")
 
 def key_pressed(event):
     if event.keysym == "0":
-        Handler0()
+        handler0()
     if event.keysym == "1":
-        Handler1()
+        handler1()
     if event.keysym == "2":
-        Handler2()
+        handler2()
     if event.keysym == "3":
-        Handler3()
+        handler3()
     if event.keysym == "4":
-        Handler4()
+        handler4()
     if event.keysym == "5":
-        Handler5()
+        handler5()
     if event.keysym == "6":
-        Handler6()
+        handler6()
     if event.keysym == "7":
-        Handler7()
+        handler7()
     if event.keysym == "8":
-        Handler8()
+        handler8()
     if event.keysym == "9":
-        Handler9()
+        handler9()
     if event.keysym == "minus":
-        HandlerMinus()
+        handler_minus()
     if event.keysym == "plus":
-        HandlerPlus()
+        handler_plus()
     if event.keysym == "asterisk":
-        HandlerUmnoj()
+        handler_umnoj()
     if event.keysym == "slash":
-        HandlerDelen()
+        handler_delen()
     if event.keysym == "Return" or event.keysym == "equal":
-        HandlerRavno()
+        handler_ravno()
     if event.keysym == "comma" or event.keysym == "period":
-        HandlerComma()
+        handler_comma()
     if event.keysym == "Escape":
         root.destroy()
     if event.keysym == "BackSpace":
-        HandlerClear()
+        handler_clear()
 
 root.bind("<KeyPress>", key_pressed)
 
@@ -70,75 +70,75 @@ photo_clear = PhotoImage(file=os.path.join(os.path.dirname(__file__), "grafika/c
 
 label = ttk.Label(background="#FFFFFF", text="", font="20")
 
-def Handler1():
-    label.config(text=handlers.handleDigit1().replace(".", ","))
+def handler1():
+    label.config(text=handlers.handle_digit1().replace(".", ","))
 
-def Handler2():
-    label.config(text=handlers.handleDigit2().replace(".", ","))
+def handler2():
+    label.config(text=handlers.handle_digit2().replace(".", ","))
 
-def Handler3():
-    label.config(text=handlers.handleDigit3().replace(".", ","))
+def handler3():
+    label.config(text=handlers.handle_digit3().replace(".", ","))
 
-def Handler4():
-    label.config(text=handlers.handleDigit4().replace(".", ","))
+def handler4():
+    label.config(text=handlers.handle_digit4().replace(".", ","))
 
-def Handler5():
-    label.config(text=handlers.handleDigit5().replace(".", ","))
+def handler5():
+    label.config(text=handlers.handle_digit5().replace(".", ","))
 
-def Handler6():
-    label.config(text=handlers.handleDigit6().replace(".", ","))
+def handler6():
+    label.config(text=handlers.handle_digit6().replace(".", ","))
 
-def Handler7():
-    label.config(text=handlers.handleDigit7().replace(".", ","))
+def handler7():
+    label.config(text=handlers.handle_digit7().replace(".", ","))
 
-def Handler8():
-    label.config(text=handlers.handleDigit8().replace(".", ","))
+def handler8():
+    label.config(text=handlers.handle_digit8().replace(".", ","))
 
-def Handler9():
-    label.config(text=handlers.handleDigit9().replace(".", ","))
+def handler9():
+    label.config(text=handlers.handle_digit9().replace(".", ","))
 
-def Handler0():
-    label.config(text=handlers.handleDigit0().replace(".", ","))
+def handler0():
+    label.config(text=handlers.handle_digit0().replace(".", ","))
 
-def HandlerPlus():
-    label.config(text=handlers.handleOperatorPlus().replace(".", ","))
+def handler_plus():
+    label.config(text=handlers.handle_operator_plus().replace(".", ","))
 
-def HandlerMinus():
-    label.config(text=handlers.handleOperatorMinus().replace(".", ","))
+def handler_minus():
+    label.config(text=handlers.handle_operator_minus().replace(".", ","))
 
-def HandlerUmnoj():
-    label.config(text=handlers.handleOperatorMult().replace(".", ","))
+def handler_umnoj():
+    label.config(text=handlers.handle_operator_mult().replace(".", ","))
 
-def HandlerRavno():
-    label.config(text=handlers.handleOperatorEquals().replace(".", ","))
+def handler_ravno():
+    label.config(text=handlers.handle_operator_equals().replace(".", ","))
 
-def HandlerDelen():
-    label.config(text=handlers.handleOperatorDivide().replace(".", ","))
+def handler_delen():
+    label.config(text=handlers.handle_operator_divide().replace(".", ","))
 
-def HandlerComma():
-    label.config(text=handlers.handleComma().replace(".", ","))
+def handler_comma():
+    label.config(text=handlers.handle_comma().replace(".", ","))
 
-def HandlerClear():
-    label.config(text=handlers.handleErase().replace(".", ","))
+def handler_clear():
+    label.config(text=handlers.handle_erase().replace(".", ","))
 
 
-btn1 = Button(root, image=photo1 ,text=" 1 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=Handler1)
-btn2 = Button(root, image=photo2 ,text=" 2 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=Handler2)
-btn3 = Button(root, image=photo3 ,text=" 3 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=Handler3)
-btn4 = Button(root, image=photo4 ,text=" 4 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=Handler4)
-btn5 = Button(root, image=photo5 ,text=" 5 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=Handler5)
-btn6 = Button(root, image=photo6 ,text=" 6 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=Handler6)
-btn7 = Button(root, image=photo7 ,text=" 7 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=Handler7)
-btn8 = Button(root, image=photo8 ,text=" 8 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=Handler8)
-btn9 = Button(root, image=photo9 ,text=" 9 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=Handler9)
-btn0 = Button(root, image=photo0 ,text=" 0 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=Handler0)
-btn_plus = Button(root, image=photo_plus ,text=" + ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerPlus)
-btn_minus = Button(root, image=photo_minus ,text=" - ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerMinus)
-btn_umnoj = Button(root, image=photo_umnoj ,text=" * ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerUmnoj)
-btn_delen = Button(root, image=photo_delen ,text=" / ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerDelen)
-btn_ravno = Button(root, image=photo_ravno ,text=" = ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerRavno)
-btn_comma = Button(root, image=photo_comma ,text=" , ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerComma)
-btn_clear = Button(root, image=photo_clear ,text=" C ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=HandlerClear)
+btn1 = Button(root, image=photo1 ,text=" 1 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler1)
+btn2 = Button(root, image=photo2 ,text=" 2 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler2)
+btn3 = Button(root, image=photo3 ,text=" 3 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler3)
+btn4 = Button(root, image=photo4 ,text=" 4 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler4)
+btn5 = Button(root, image=photo5 ,text=" 5 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler5)
+btn6 = Button(root, image=photo6 ,text=" 6 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler6)
+btn7 = Button(root, image=photo7 ,text=" 7 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler7)
+btn8 = Button(root, image=photo8 ,text=" 8 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler8)
+btn9 = Button(root, image=photo9 ,text=" 9 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler9)
+btn0 = Button(root, image=photo0 ,text=" 0 ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler0)
+btn_plus = Button(root, image=photo_plus ,text=" + ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler_plus)
+btn_minus = Button(root, image=photo_minus ,text=" - ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler_minus)
+btn_umnoj = Button(root, image=photo_umnoj ,text=" * ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler_umnoj)
+btn_delen = Button(root, image=photo_delen ,text=" / ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler_delen)
+btn_ravno = Button(root, image=photo_ravno ,text=" = ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler_ravno)
+btn_comma = Button(root, image=photo_comma ,text=" , ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler_comma)
+btn_clear = Button(root, image=photo_clear ,text=" C ", cursor="hand2", borderwidth=0, background="#FFFFFF", activebackground="#FFFFFF", command=handler_clear)
 
 label.place(x=20, y=0, width=300, height=100)
 
